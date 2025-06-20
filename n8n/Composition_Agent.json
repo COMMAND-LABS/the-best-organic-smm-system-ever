@@ -1,0 +1,334 @@
+{
+  "name": "Composition Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -440,
+        -60
+      ],
+      "id": "05f58642-753d-4758-afaa-62a8f1906ffa",
+      "name": "When chat message received",
+      "webhookId": "0762c001-d470-403c-b5ed-22d03d693691"
+    },
+    {
+      "parameters": {
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -220,
+        -60
+      ],
+      "id": "955f034c-6574-4209-922a-201e2ecdbfd2",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -192,
+        160
+      ],
+      "id": "1df5f1d4-9f9a-46ac-937f-dbcb1bbd553a",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "xZcQe7setUtfHrsn",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "apphOFikyofGAIOGS",
+          "mode": "list",
+          "cachedResultName": "pre.dev content ideas",
+          "cachedResultUrl": "https://airtable.com/apphOFikyofGAIOGS"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblvNUSOsHFhl3hOh",
+          "mode": "list",
+          "cachedResultName": "Raw content ideas",
+          "cachedResultUrl": "https://airtable.com/apphOFikyofGAIOGS/tblvNUSOsHFhl3hOh"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Approved": false,
+            "Prompt": "={{ $('When chat message received').item.json.chatInput }}",
+            "Instagram Caption": "={{ $json.output.ig_caption }}",
+            "LinkedIn Post": "={{ $json.output.linkedin_post }}",
+            "X.com Post": "={{ $json.output.x_post }}",
+            "YouTube Post": "={{ $json.output.youtube_post }}",
+            "TikTok Post": "={{ $json.output.tiktok_post }}",
+            "Post Type": "={{ $json.output.content_type }}",
+            "Facebook Post": "={{ $json.output.facebook_post }}",
+            "Media": "={{ $json.output.link_to_media }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Prompt",
+              "displayName": "Prompt",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Post Type",
+              "displayName": "Post Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Image",
+                  "value": "Image"
+                },
+                {
+                  "name": "Text",
+                  "value": "Text"
+                },
+                {
+                  "name": "Video",
+                  "value": "Video"
+                },
+                {
+                  "name": "Image Carousel",
+                  "value": "Image Carousel"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Instagram Caption",
+              "displayName": "Instagram Caption",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "LinkedIn Post",
+              "displayName": "LinkedIn Post",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "X.com Post",
+              "displayName": "X.com Post",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "YouTube Post",
+              "displayName": "YouTube Post",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "TikTok Post",
+              "displayName": "TikTok Post",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Facebook Post",
+              "displayName": "Facebook Post",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Creation Date",
+              "displayName": "Creation Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Media",
+              "displayName": "Media",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Approved",
+              "displayName": "Approved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        156,
+        -60
+      ],
+      "id": "ef81a597-0989-45f0-a74c-162b3c973f33",
+      "name": "Airtable",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "dpE1KjadRxYqsvOT",
+          "name": "Jae"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"prompt\": {\n      \"type\": \"string\"\n    },\n    \"content_type\": {\n      \"type\": \"string\",\n      \"enum\": [\"Image\", \"Image Carousel\", \"Text\", \"Video\"]\n    },\n    \"ig_caption\": {\n      \"type\": \"string\"\n    },\n    \"linkedin_post\": {\n      \"type\": \"string\"\n    },\n    \"x_post\": {\n      \"type\": \"string\"\n    },\n    \"youtube_post\": {\n      \"type\": \"string\" \n    },\n    \"tiktok_post\": {\n      \"type\": \"string\"\n    },\n    \"facebook_post\": {\n      \"type\": \"string\"\n    },\n    \"link_to_media\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"url\": {\n            \"type\": \"string\"\n          },\n          \"filename\": {\n            \"type\": \"string\"\n          }\n        }\n      }\n    }\n  },\n  \"required\": [\n    \"prompt\",\n    \"content_type\",\n    \"ig_caption\",\n    \"linkedin_post\",\n    \"x_post\",\n    \"youtube_post\",\n    \"tiktok_post\",\n    \"facebook_post\",\n    \"link_to_media\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        -40,
+        160
+      ],
+      "id": "075b1089-44a7-4bc4-b86c-ac8391ff613d",
+      "name": "Structured Output Parser"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Airtable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "88a95a5e-3355-4df0-8ac7-795575141312",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "59163ef64e1cf4dcd8e0818ffdc09c87dbd57c11199a791813b2ff3820cc01aa"
+  },
+  "id": "z3ta1MDaqFbfxl3Z",
+  "tags": []
+}
