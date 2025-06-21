@@ -1,12 +1,15 @@
 # TLDR
 
-Here are the step-by-step setup steps for how to get this SMM system up-and-running. Dedicated to Chris Larco.
+Here are the setup steps for how to get this SMM system up and running. Dedicated to Chris Larco.
 
 ## Overview
 
 1. Prereqs
-2. Setting up PART A (Composition Agent)
-3. Setting up PART B (Distribution Agent)
+2. Prereqs for PART A
+3. Setting up PART A (Composition Agent)
+4. Prereqs for PART B
+5. Setting up PART B (Distribution Agent)
+6. End-2-End Testing
 
 ## Prereqs for PART A
 
