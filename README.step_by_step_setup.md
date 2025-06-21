@@ -4,21 +4,20 @@ Here are the setup steps for how to get this SMM system up and running. Dedicate
 
 ## Overview
 
-1. Prereqs
-2. Prereqs for PART A
-3. Setting up PART A (Composition Agent)
-4. Prereqs for PART B
-5. Setting up PART B (Distribution Agent)
-6. End-2-End Testing
+1. Prereqs for PART A
+2. Setting up PART A (Composition Agent)
+3. Prereqs for PART B
+4. Setting up PART B (Distribution Agent)
+5. End-2-End Testing
 
-## Prereqs for PART A
+## 1. Prereqs for PART A
 
 - Sign up to Airtable (https://airtable.com/)
 - Sign up to Dropbox (https://www.dropbox.com/)
 - Sign up to n8n (https://n8n.io/)
 - Sign up to OpenAI Platform (https://platform.openai.com/) or the Anthropic Console (https://console.anthropic.com/)
 
-## Setting up PART A - The "Composition" Agent
+## 2. Setting up PART A - The "Composition" Agent
 
 - Download the `n8n/Composition_Agent.json` file from GitHub (https://github.com/COMMAND-LABS/the-best-organic-smm-system-ever/blob/main/n8n/Composition_Agent.json)
     - Import the `Composition_Agent.json` workflow into n8n
@@ -36,7 +35,7 @@ Here are the setup steps for how to get this SMM system up and running. Dedicate
       - `Content`
       - `Distribution Prompts`
 
-## Prereqs for PART B
+## 3. Prereqs for PART B
 
 - Download & Install Node.js (https://nodejs.org/en/download)
 - Download & Install uv (https://docs.astral.sh/uv/getting-started/installation/)
@@ -44,7 +43,7 @@ Here are the setup steps for how to get this SMM system up and running. Dedicate
   - We will need the `ADVANCED` plan is it gives you access to the Metricool API
 - Download Claude for Desktop (https://claude.ai/download)
 
-## Setting up PART B - The "Distribution" Agent
+## 4. Setting up PART B - The "Distribution" Agent
 
 - Get an API key from Metricool
   - Will be needed in the `claude_desktop_config.json` file
@@ -61,6 +60,6 @@ Here are the setup steps for how to get this SMM system up and running. Dedicate
     - https://glama.ai/mcp/servers/@metricool/mcp-metricool
     - https://github.com/metricool/mcp-metricool
 
-## End-2-End Testing
+## 5. End-2-End Testing
 
 Refer to `demo_1`, `demo_2`, and `demo_3`
