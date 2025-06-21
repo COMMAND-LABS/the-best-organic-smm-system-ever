@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "mcp-metricool": {
+      "command": "uvx",
+      "args": [
+        "mcp-metricool"
+      ],
+      "env": {
+        "METRICOOL_USER_TOKEN": "<YOUR_METRICOOL_API_KEY_HERE>",
+        "METRICOOL_USER_ID": "<YOUR_METRICOOL_USER_ID_HERE>"
+      }
+    },
+    "airtable": {
+      "command": "node",
+      "args": [
+        "<PATH_TO_AIRTABLE_MCP_SERVER_FOLDER>/build/index.js"
+      ],
+      "env": {
+        "AIRTABLE_API_KEY": "<YOUR_AIRTABLE_PAT_HERE>"
+      }
+    }
+  }
+}

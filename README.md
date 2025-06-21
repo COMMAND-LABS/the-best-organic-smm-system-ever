@@ -25,17 +25,17 @@ Peep `diagrams/SMM_team_of_agents.png`
 
 ## Agent A Components (Composition Agent)
 
-`Airtable` - https://airtable.com/
-`Dropbox` - https://www.dropbox.com/
-`n8n` - https://n8n.io/
-`OpenAI`  or `Anthropic API` - https://platform.openai.com/ or https://console.anthropic.com/
+- `Airtable` (https://airtable.com/)
+- `Dropbox` (https://www.dropbox.com/)
+- `n8n` (https://n8n.io/)
+- `OpenAI` (https://platform.openai.com/) or `Anthropic API` (https://console.anthropic.com/)
 
 ## Agent B Components (Distribution Agent)
 
-`Airtable` - https://airtable.com/
-`Dropbox` - https://www.dropbox.com/
-`Metricool` - https://metricool.com/
-`Claude for Desktop` - https://claude.ai/download
+- `Airtable` (https://airtable.com/)
+- `Dropbox` (https://www.dropbox.com/)
+- `Metricool` (https://metricool.com/)
+- `Claude for Desktop` (https://claude.ai/download)
 
 ## MCP
 
